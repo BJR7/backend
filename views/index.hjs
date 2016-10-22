@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    
+    <meta charset="utf-8" />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+	<link rel="stylesheet" href="bootstrap-3.3.6-dist/css/bootstrap.css"/>
+
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <br><br>
+	<!-- MAIN -->
+	<div id="main">
+			<div class="container col-sm-20">
+				<div class="panel panel-info">
+				<div class="panel-heading"> Activity Register </div>
+				<div class="panel-body">
+
+				<header> 
+					<h2> <strong> Create Activity.</strong> </h2>
+					<p>Insertar la informacion necesaria para crear cada una de las actividades por cada dia del evento.</p>
+								
+					<div class="container col-sm-10">
+						<div class="panel panel-primary">
+							<div class="panel-heading">DAY</div>
+							<div class="panel-body">
+								
+								<form class="form-horizontal" role="form">
+								  
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="title">Activity:</label>
+								    	<div class="col-sm-5">
+								      		<input type="text" class="form-control" id="activity" placeholder="Conferencia / Taller / Inauguracion">
+								    	</div>
+								  	</div>
+								  
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="start_time">Start Time:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="day_start_time" placeholder="Start Time">
+								    	</div>
+								  </div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="ending_time">Ending Time:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="day_ending_time" placeholder="Ending Time">
+								    	</div>
+								  	</div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="date">Date:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="date" placeholder="Date">
+								    	</div>
+								  	</div>								 								  
+								</form>
+								
+							</div>
+							<div class="text-primary">
+
+								<div class="text-primary">
+									<div class="panel-footer">
+										<button type="button" class="btn btn-primary" onclick="Create_Day()" >Save Day</button>
+										<button type="button" class="btn btn-danger " onclick="Clear_Day()" >Clear Day</button>
+									</div>
+								</div>
+
+								<div class="panel-footer">Informacion general de un dia en especifico</div>
+							</div>
+						</div>									
+					</div>
+
+				<div class="container col-sm-10">
+				<div class="panel panel-warning">
+				<div class="panel-heading"> Create Daily Activities </div>
+				<div class="panel-body">
+					<div class="container col-sm-10">
+						<div class="panel panel-success">
+							<div class="panel-heading">ACTIVITY</div>
+							<div class="panel-body">
+								
+								<form class="form-horizontal" role="form">
+								  
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="title">Name:</label>
+								    	<div class="col-sm-5">
+								      		<input type="text" class="form-control" id="title" placeholder="Activity Name">
+								    	</div>
+								  	</div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="type">Type</label>
+								    	<div class="col-sm-5">
+											<div class="form-group">
+												<div class="col-sm-7">
+													<select class="form-control" id="type">
+													    <option value = '1'>Inauguracion</option>
+													    <option value = '2'>Conferencia</option>
+													    <option value = '3'>Taller</option>
+													    <option value = '4'>Visita Tecnica</option>
+													    <option value = '5'>Cena de Gala</option>
+													    <option value = '6'>Fiesta</option>
+													</select>
+												</div>											  
+											</div>
+								    	</div>
+								  	</div>
+								  
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="start_time">Start Time:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="start_time" placeholder="Start Time">
+								    	</div>
+								  </div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="ending_time">Ending Time:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="ending_time" placeholder="Ending Time">
+								    	</div>
+								  	</div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="speaker">Speaker:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="speaker" placeholder="Speaker">
+								    	</div>
+								  	</div>
+
+								  	<div class="form-group">
+								    	<label class="control-label col-sm-2" for="company">Company:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="company" placeholder="Company">
+								    	</div>
+								  	</div>
+								  	<div class="form-group">
+								  		<label class="control-label col-sm-2" for="in charge">In Charge:</label>
+								  		<div class="col-sm-5">
+								  			<input type="text" class="form-control" id="incharge" placeholder="In Charge">
+								  		</div>
+								  	</div>
+								  	<div class="form-group">
+								  		<label class="control-label col-sm-2" for="in charge">In Charge Phone Number:</label>
+								  		<div class="col-sm-5">
+								  			<input type="text" class="form-control" id="incharge_phone" placeholder="In Charge Phone Number">
+								  		</div>
+								  	</div>									 								  
+								</form>
+								
+							</div>
+							<div class="text-primary">
+								<div class="panel-footer">Informacion general de una actividad especifica</div>
+							</div>
+						</div>									
+					</div>
+
+					<div class="container col-sm-10">
+						<div class="panel panel-danger">
+							<div class="panel-heading">ACTIVITY DETAIL</div>
+							<div class="panel-body">
+								
+								<form class="form-horizontal" role="form">
+								  
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="description">Description:</label>
+								    	<div class="col-sm-5">
+								      		<input type="text" class="form-control" id="description" placeholder="Description">
+								    	</div>
+								  	</div>
+								  
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="place">Place:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="place" placeholder="Place">
+								    	</div>
+								    </div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="address">Address:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="address" placeholder="Address">
+								    	</div>
+								    </div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="latitude">Latitude:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="latitud" placeholder="Latitud">
+								    	</div>
+								  	</div>
+
+									<div class="form-group">
+								    	<label class="control-label col-sm-2" for="length">Length:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="length" placeholder="Length">
+								    	</div>
+								  	</div>
+
+								  	<div class="form-group">
+								    	<label class="control-label col-sm-2" for="Img_Path">Image Path:</label>
+								    	<div class="col-sm-5"> 
+								      		<input type="text" class="form-control" id="img_path" placeholder="Image Path">
+								    	</div>
+								  	</div>
+
+								  	<div class="form-group">
+								    	<label class="control-label col-sm-2" for="icon">Type</label>
+								    	<div class="col-sm-5">
+											<div class="form-group">
+												<div class="col-sm-7">
+													<select class="form-control" id="icon">
+													    <option value = '1'>Laravel</option>
+													    <option value = '2'>Android</option>
+													    <option value = '3'>AngularJS 2</option>
+													    <option value = '4'>NodeJS</option>
+													    <option value = '5'>JavaScript</option>
+													    <option value = '6'>Ruby</option>
+													    <option value = '7'>Objective C</option>
+													    <option value = '8'>Conferencia</option>
+													    <option value = '9'>Taller</option>
+													</select>
+												</div>											  
+											</div>
+								    	</div>
+								  	</div>
+
+								</form>
+								
+							</div>
+							<div class="text-primary">
+								<div class="panel-footer">Detalle de una actividad especifica</div>
+							</div>
+						</div>									
+					</div>
+				</div>
+					<div class="text-primary">
+						<div class="panel-footer">
+							<button type="button" class="btn btn-primary" onclick="Save_All_Activities()" >Save All Activities</button>
+							<button type="button" class="btn btn-primary" onclick="Save_Activity()" >Save Activity</button>
+							<button type="button" class="btn btn-success " onclick="New_Activity()" >New Activity</button>
+							<button type="button" class="btn btn-danger " onclick="Clear_All()" >Clear All</button>
+
+						</div>
+					</div>
+				</div>
+				</div>
+				</header>
+				
+				</div>
+				</div>
+			</div>
+
+	</div>
+
+	<script src="JQuery/jquery-2.2.0.min.js"></script>
+	<script src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script src="socket.io/socket.io.js"></script>  	
+  	<script src="javascripts/activity_handler.js"></script>  	
+
+  </body>
+</html>
